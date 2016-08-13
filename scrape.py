@@ -15,13 +15,18 @@ def scrape():
 
 	soup = BeautifulSoup(page_html, 'html.parser')
 
-	tables = soup.find_all('table')
+	tbodys = soup.find_all('tbody')
 
-	# 12 tables on page, but only 11 specializations
-	del tables[11]
-
-	for table in tables:
-		print table.text
+	for t in tbodys:
+		table_soup = BeautifulSoup(str(t), 'html.parser')
+		tr = table_soup.find_all('tr')
+		
+		# Parse the Specialization Name, Core Classes, and Electives
+		name = tr[0].td.h4.string.strip()[len('Specialization in '):]
+		core = tr[1]
+		electives = tr[2]
+		
+		print name
 
 if __name__ == '__main__':
 	scrape()
