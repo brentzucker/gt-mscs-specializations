@@ -15,9 +15,10 @@ class Specialization:
 
 def scrape():
 	url = 'http://www.cc.gatech.edu/academics/degree-programs/masters/computer-science/specializations'
-	
 	page_html = requests.get(url).text
+	return page_html
 
+def parse(page_html):
 	soup = BeautifulSoup(page_html, 'html.parser')
 
 	tbodys = soup.find_all('tbody')
@@ -56,4 +57,5 @@ def scrape():
 
 
 if __name__ == '__main__':
-	scrape()
+	page_html = scrape()
+	parse(page_html)
