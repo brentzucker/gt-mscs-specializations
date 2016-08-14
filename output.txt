@@ -1,0 +1,135 @@
+Computational Perception and Robotics -  Machine Learning
+9
+['CSE 6140', 'CS 7520', 'CS 6520', 'CS 7530', 'CS 6505', 'CS 7641', 'CS 6550', 'CS 8803', 'CS 7650']
+Human-Computer Interaction -  Social Computing
+7
+['CS 6750', 'CS 7460', 'CS 7467', 'CS 6456', 'CS 6465', 'CS 6470', 'CS 7450']
+Computing Systems -  Social Computing
+6
+['CS 6675', 'CS 6250', 'CS 7210', 'CS 8803', 'CS 6238', 'CS 7270']
+Computational Perception and Robotics -  Interactive Intelligence
+5
+['CS 7641', 'CS 6505', 'CS 6601', 'CS 8803', 'CS 7650']
+Human-Computer Interaction -  Visual Analytics
+5
+['CS 6465', 'CS 6795', 'CS 6750', 'CS 7450', 'CS 6456']
+Scientific Computing -  High Performance Computing
+5
+['CSE 6140', 'CS/CSE 8803', 'CSE 8803', 'CS/CSE 6230', 'CSE 6220']
+Visual Analytics -  Social Computing
+5
+['CS 6465', 'CS 8803', 'CS 6750', 'CS 7450', 'CS 6456']
+Machine Learning -  Interactive Intelligence
+4
+['CS 7641', 'CS 6505', 'CS 8803', 'CS 7650']
+Computational Perception and Robotics -  Computer Graphics
+3
+['CS 6505', 'CS 6476', 'CS 6475']
+Human-Computer Interaction -  Interactive Intelligence
+3
+['CS 6465', 'CS 6795', 'CS 6460']
+Visual Analytics -  Interactive Intelligence
+3
+['CS 6465', 'CS 6795', 'CS 8803']
+Computational Perception and Robotics -  Computing Systems
+2
+['CS 8803', 'CS 6550']
+Computational Perception and Robotics -  Social Computing
+2
+['CS 8803', 'CS 6505']
+Computing Systems -  High Performance Computing
+2
+['CS 6241', 'CS 6290']
+Computing Systems -  Interactive Intelligence
+2
+['CS 6300', 'CS 8803']
+Computing Systems -  Machine Learning
+2
+['CS 8803', 'CS 6550']
+Machine Learning -  Social Computing
+2
+['CS 8803', 'CS 6505']
+Machine Learning -  Visual Analytics
+2
+['CS 8803', 'CSE 6740']
+Scientific Computing -  Modeling and Simulations
+2
+['MATH 6640', 'CSE 6220']
+Computational Perception and Robotics -  High Performance Computing
+1
+['CSE 6140']
+Computational Perception and Robotics -  Scientific Computing
+1
+['CSE 6140']
+Computational Perception and Robotics -  Visual Analytics
+1
+['CS 8803']
+Computing Systems -  Visual Analytics
+1
+['CS 8803']
+Machine Learning -  Computer Graphics
+1
+['CS 6505']
+Machine Learning -  High Performance Computing
+1
+['CSE 6140']
+Machine Learning -  Scientific Computing
+1
+['CSE 6140']
+Visual Analytics -  Computer Graphics
+1
+['CS 6485']
+Computational Perception and Robotics -  Human-Computer Interaction
+0
+[]
+Computational Perception and Robotics -  Modeling and Simulations
+0
+[]
+Computing Systems -  Computer Graphics
+0
+[]
+Computing Systems -  Human-Computer Interaction
+0
+[]
+Computing Systems -  Modeling and Simulations
+0
+[]
+Computing Systems -  Scientific Computing
+0
+[]
+Human-Computer Interaction -  Computer Graphics
+0
+[]
+Human-Computer Interaction -  High Performance Computing
+0
+[]
+Human-Computer Interaction -  Machine Learning
+0
+[]
+Human-Computer Interaction -  Modeling and Simulations
+0
+[]
+Human-Computer Interaction -  Scientific Computing
+0
+[]
+Machine Learning -  Modeling and Simulations
+0
+[]
+Scientific Computing -  Computer Graphics
+0
+[]
+Scientific Computing -  Interactive Intelligence
+0
+[]
+Scientific Computing -  Social Computing
+0
+[]
+Scientific Computing -  Visual Analytics
+0
+[]
+Visual Analytics -  High Performance Computing
+0
+[]
+Visual Analytics -  Modeling and Simulations
+0
+[]
