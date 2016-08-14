@@ -33,17 +33,6 @@ def parse(page_html):
 		# Parse the Specialization Name, Core Classes, and Electives
 		name = tr[0].td.h4.string.strip()[len('Specialization in '):]
 		specialization = Specialization(name)
-		print specialization.name
-
-	#	# Parse Core Classes (Num of req and class numbers)
-	#	core = tr[1]
-	#	tr1_soup = BeautifulSoup(str(core), 'html.parser')
-	#	core_td = tr1_soup.find_all('td')
-	#	for child in core_td[1].descendants:
-	#		print str(child.strip()
-		
-		
-	#	electives = tr[2]
 
 		# Parse classes
 		for row in [tr[1], tr[2]]:
@@ -64,7 +53,7 @@ def parse(page_html):
 def analyze(specializations):
 	specialization_pairs = []
 	for i, s1 in enumerate(specializations):
-		del specializations[i]
+		del specializations[i] # to remove duplicates
 		for s2 in specializations:
 			if s1.name != s2.name:
 				pair = {}
@@ -75,13 +64,14 @@ def analyze(specializations):
 
 	# Sort by num_in_common
 	specialization_pairs.sort(key=lambda x: x['num_in_common'], reverse=True)
+	return specialization_pairs
+
+if __name__ == '__main__':
+	page_html = scrape()
+	specializations = parse(page_html)
+	specialization_pairs = analyze(specializations)
 
 	for sp in specialization_pairs:
 		print sp['name']
 		print sp['num_in_common']
 		print sp['common_courses']
-
-if __name__ == '__main__':
-	page_html = scrape()
-	specializations = parse(page_html)
-	analyze(specializations)
