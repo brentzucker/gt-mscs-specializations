@@ -63,11 +63,12 @@ def parse(page_html):
 
 def analyze(specializations):
 	specialization_pairs = []
-	for s1 in specializations:
+	for i, s1 in enumerate(specializations):
+		del specializations[i]
 		for s2 in specializations:
 			if s1.name != s2.name:
 				pair = {}
-				pair['name'] = s1.name + ' ' + s2.name
+				pair['name'] = s1.name + ' -  ' + s2.name
 				pair['common_courses'] = list(set(s1.courses).intersection(set(s2.courses)))
 				pair['num_in_common'] = len(pair['common_courses'])
 				specialization_pairs.append(pair)
