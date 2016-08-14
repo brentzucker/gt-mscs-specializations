@@ -11,7 +11,9 @@ from bs4 import BeautifulSoup
 class Specialization:
 	def __init__(self, name):
 		self.name = name
-		courses = []
+		self.courses = []
+		self.core = []
+		self.electives = []
 
 def scrape():
 	url = 'http://www.cc.gatech.edu/academics/degree-programs/masters/computer-science/specializations'
@@ -22,14 +24,16 @@ def parse(page_html):
 	soup = BeautifulSoup(page_html, 'html.parser')
 
 	tbodys = soup.find_all('tbody')
-
+	
+	specializations = []
 	for t in tbodys:
 		table_soup = BeautifulSoup(str(t), 'html.parser')
 		tr = table_soup.find_all('tr')
 		
 		# Parse the Specialization Name, Core Classes, and Electives
 		name = tr[0].td.h4.string.strip()[len('Specialization in '):]
-		print name
+		specialization = Specialization(name)
+		print specialization.name
 
 	#	# Parse Core Classes (Num of req and class numbers)
 	#	core = tr[1]
@@ -53,9 +57,30 @@ def parse(page_html):
 
 				c = course_name.split(" ")[:2]
 				course_num = ' '.join(c)
-				print course_num
+				specialization.courses.append(course_num)
+		specializations.append(specialization)
+	return specializations
 
+def analyze(specializations):
+	specialization_pairs = []
+	for s1 in specializations:
+		for s2 in specializations:
+			if s1.name != s2.name:
+				pair = {}
+				pair['name'] = s1.name + ' ' + s2.name
+				pair['common_courses'] = list(set(s1.courses).intersection(set(s2.courses)))
+				pair['num_in_common'] = len(pair['common_courses'])
+				specialization_pairs.append(pair)
+
+	# Sort by num_in_common
+	specialization_pairs.sort(key=lambda x: x['num_in_common'], reverse=True)
+
+	for sp in specialization_pairs:
+		print sp['name']
+		print sp['num_in_common']
+		print sp['common_courses']
 
 if __name__ == '__main__':
 	page_html = scrape()
-	parse(page_html)
+	specializations = parse(page_html)
+	analyze(specializations)
