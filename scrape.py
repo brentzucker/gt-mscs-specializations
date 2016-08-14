@@ -8,6 +8,11 @@
 import requests
 from bs4 import BeautifulSoup
 
+class Specialization:
+	def __init__(self, name):
+		self.name = name
+		courses = []
+
 def scrape():
 	url = 'http://www.cc.gatech.edu/academics/degree-programs/masters/computer-science/specializations'
 	
@@ -23,10 +28,32 @@ def scrape():
 		
 		# Parse the Specialization Name, Core Classes, and Electives
 		name = tr[0].td.h4.string.strip()[len('Specialization in '):]
-		core = tr[1]
-		electives = tr[2]
-		
 		print name
+
+	#	# Parse Core Classes (Num of req and class numbers)
+	#	core = tr[1]
+	#	tr1_soup = BeautifulSoup(str(core), 'html.parser')
+	#	core_td = tr1_soup.find_all('td')
+	#	for child in core_td[1].descendants:
+	#		print str(child.strip()
+		
+		
+	#	electives = tr[2]
+
+		# Parse classes
+		for row in [tr[1], tr[2]]:
+			lis = BeautifulSoup(str(row), 'html.parser').find_all('li')
+			for li in lis:
+				if li.string != None:
+					course_name = li.string
+				else:
+					# handle random CS 6400 which is embedded in a <p> tag...
+					course_name = li.p.string
+
+				c = course_name.split(" ")[:2]
+				course_num = ' '.join(c)
+				print course_num
+
 
 if __name__ == '__main__':
 	scrape()
